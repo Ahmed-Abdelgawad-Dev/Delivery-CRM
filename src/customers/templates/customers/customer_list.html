@@ -1,0 +1,10 @@
+{% extends 'core/_base.html' %}
+{% block customers %}
+    {% for customer in customers_list %}
+        <ul>
+            <a href="{% url 'customer_detail' customer.slug %}">
+                <li>{{ customer }}</li>
+            </a>
+        </ul>
+    {% endfor %}
+{% endblock %}
