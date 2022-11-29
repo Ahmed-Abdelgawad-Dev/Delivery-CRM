@@ -37,7 +37,9 @@
 </head>
     <body>
         <div id="layout">
-            <div id="header"></div>
+            <div id="header">
+                {% include 'core/parts/navbar.html' %}
+            </div>
             <div id="body">
                 <div id="customers">
                     {% block customers %} {% endblock %}

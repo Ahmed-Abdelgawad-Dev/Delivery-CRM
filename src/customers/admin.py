@@ -3,8 +3,7 @@ from .models import Customer
 
 
 class CustomerAdmin(admin.ModelAdmin):
-    list_display = ['full_name', 'first_name',
-                    'last_name', 'mobile']
-    search_fields = ['first_name', 'last_name']
-    prepopulated_fields = {"slug": ("first_name","last_name",)}
+    list_display = ['name', 'id', 'mobile', 'created', 'updated']
+    search_fields = ['name','mobile']
+    prepopulated_fields = {"slug": ("name",)}
 admin.site.register(Customer, CustomerAdmin)

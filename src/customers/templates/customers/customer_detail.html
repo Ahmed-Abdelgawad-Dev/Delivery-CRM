@@ -1,4 +1,13 @@
 {% extends 'core/_base.html' %}
 {% block customers %}
-        <p>{{ customer_detail }}</p>
-{% endblock %}s
+<a href="{% url 'customer_list' %}">Customers</a> |
+<a href="{% url 'customer_create' %}">Create Customer</a>
+<div>
+        <h5>Customer's Details:</h5><br>
+        <h6>Name: {{ customer_detail.name }}</h6>
+        <p>ID: {{customer_detail.id}}</p>
+        <p>Tel: {{customer_detail.mobile}}</p>
+        <p>Created at: {{customer_detail.created}}</p>
+        <p>Updated at: {{customer_detail.updated}}</p>
+</div>
+{% endblock %}

@@ -1,10 +1,17 @@
 {% extends 'core/_base.html' %}
 {% block customers %}
-    {% for customer in customers_list %}
-        <ul>
-            <a href="{% url 'customer_detail' customer.slug %}">
+<a href="{% url 'customer_list' %}" >Customers</a> |
+<a href="{% url 'customer_create' %}">Create Customer</a>
+    <div>
+        <h6>All Customers:</h6>
+        <a href="{% url 'customer_create' %}">New</a>
+        {% for customer in customers_list %}
+        <ul class="list-unstyled">
+            <a href="{{ customer.get_absolute_url }}">
                 <li>{{ customer }}</li>
             </a>
         </ul>
-    {% endfor %}
+        {% endfor %}
+
+    </div>
 {% endblock %}

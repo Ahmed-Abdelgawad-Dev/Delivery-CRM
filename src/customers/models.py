@@ -1,11 +1,11 @@
+
 from django.db import models
+from django.utils.text import slugify
 
 
 class Customer(models.Model):
-    first_name  = models.CharField(max_length=100)
-    middle_name = models.CharField(max_length=100, blank=True, null=True)
-    last_name   = models.CharField(max_length=100)
-    slug        =models.SlugField()
+    name  = models.CharField(max_length=255)
+    slug        =models.SlugField(blank=True)
     mobile      = models.CharField(max_length=50)
     address     = models.TextField(null=False, blank=False)
     created     = models.DateTimeField(auto_now_add=True)
@@ -13,12 +13,16 @@ class Customer(models.Model):
     
 
     def __str__(self):
-        return f"{self.first_name} {self.last_name}"
+        return str(self.name)
 
-    @property
-    def full_name(self):
-        if not self.middle_name:
-            return f"{self.first_name} {self.last_name}"
-        else:
-            return f"{self.first_name} {self.middle_name} {self.last_name}"
+
     
+    def get_absolute_url(self):
+        print(self.pk)
+        from django.urls import reverse
+        return reverse("customer_detail", kwargs={"slug": self.slug})
+    
+    def save(self, *args, **kwargs):
+       if not self.slug:
+           self.slug = slugify(self.name)
+       super(Customer, self).save(*args, **kwargs)
