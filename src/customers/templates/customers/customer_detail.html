@@ -1,7 +1,7 @@
 {% extends 'core/_base.html' %}
 {% block customers %}
 <a href="{% url 'customer_list' %}">Customers</a> |
-<a href="{% url 'customer_create' %}">Create Customer</a>
+<a href="{% url 'customer_create' %}">Create Customer</a> |
 <div>
         <h5>Customer's Details:</h5><br>
         <h6>Name: {{ customer_detail.name }}</h6>
@@ -10,4 +10,6 @@
         <p>Created at: {{customer_detail.created}}</p>
         <p>Updated at: {{customer_detail.updated}}</p>
 </div>
+<a href="{% url 'customer_update' customer_detail.slug %}">Update Customer</a> | 
+<a href="{% url 'customer_delete' customer_detail.slug %}">Delete Customer</a>
 {% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'core/_base.html' %}
+{% block customers %}
+<a href="{% url 'customer_list' %}">Customers</a> |
+<a href="{% url 'customer_create' %}">Create Customer</a> |
+<div>
+    <form  method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Update">
+</form>
+</div>
+{% endblock %}
