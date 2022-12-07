@@ -41,10 +41,7 @@
                 {% include 'core/parts/navbar.html' %}
             </div>
             <div id="body">
-                <div id="customers">
-                    {% block customers %} {% endblock %}
-                </div>
-
+                {% block content %} {% endblock %}
             </div>
             <div id="footer"></div>
         </div>

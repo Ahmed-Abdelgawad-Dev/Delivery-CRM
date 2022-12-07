@@ -1,0 +1,16 @@
+{% extends 'core/_base.html' %}
+{% block content %}
+<a href="{% url 'item_list' %}">Items</a>
+<div>
+        <h5>Item's Details:</h5><br>
+        <h6>ID: {{ item.id }} | Name: {{ item.name }}</h6>
+        <p>Price: {{item.price}}</p>
+        <p>Category: {{item.category}}</p>
+        <p>Created at: {{item.created}}</p>
+        <p>Last Updated: {{item.updated}}</p>
+        <br>
+        <a href="{% url 'item_update' item.pk %}">Update Item</a> |
+        <a href="{% url 'item_delete' item.pk %}">Delete Item</a> |
+</div>
+
+{% endblock %}

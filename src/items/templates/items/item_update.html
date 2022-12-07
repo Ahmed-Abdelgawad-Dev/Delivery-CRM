@@ -1,7 +1,7 @@
 {% extends 'core/_base.html' %}
 {% block content %}
-<a href="{% url 'customer_list' %}">Customers</a> |
-<a href="{% url 'customer_create' %}">Create Customer</a> |
+<a href="{% url 'item_list' %}">items</a> |
+<a href="{% url 'item_create' %}">Create Item</a> |
 <div>
     <form  method="post">
     {% csrf_token %}

@@ -8,7 +8,7 @@ class Item(models.Model):
         OTHER           = 'OTHER',            _('Other')
     name     = models.CharField(max_length=100)
     price    = models.DecimalField(max_digits=6, decimal_places=2)
-    source   = models.CharField(default=ItemFrom.OTHER,
+    category   = models.CharField(default=ItemFrom.OTHER,
                               choices=ItemFrom.choices, max_length=100)
     # merchant = models.ForeignKey(Merchant, on_delete=models.SET_NULL)
     created  = models.DateTimeField(auto_now_add=True)
@@ -16,8 +16,12 @@ class Item(models.Model):
 
     def __str__(self):
         return str(self.name.lower())
+    
+    def get_absolute_url(self):
+        from django.urls import reverse
+        return reverse("item_detail", kwargs={"pk": self.pk})
 
     class Meta:
         ordering = ['-created']
-        indexes = [models.Index(fields=['name','source',]),]
+        indexes = [models.Index(fields=['name',]),]
     

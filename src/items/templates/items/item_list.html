@@ -1,0 +1,15 @@
+{% extends 'core/_base.html' %}
+{% block content %}
+<a href="{% url 'item_list' %}">Items</a> |
+<a href="{% url 'item_create' %}">Create Item</a>
+<div>
+    <h6>All Items:</h6>
+    {% for item in items_list %}
+    <ul class="list-unstyled ">
+        <li  class="text-capitalize">
+            <a href="{{ item.get_absolute_url }}">{{ item }}</a>
+        </li>
+    </ul>
+    {% endfor %}
+    </div>
+{% endblock %}
