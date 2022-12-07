@@ -10,6 +10,6 @@
         <p>Created at: {{customer_detail.created}}</p>
         <p>Updated at: {{customer_detail.updated}}</p>
 </div>
-<a href="{% url 'customer_update' customer_detail.slug %}">Update Customer</a> | 
-<a href="{% url 'customer_delete' customer_detail.slug %}">Delete Customer</a>
+<a href="{% url 'customer_update' customer_detail.pk %}">Update Customer</a> | 
+<a href="{% url 'customer_delete' customer_detail.pk %}">Delete Customer</a>
 {% endblock %}

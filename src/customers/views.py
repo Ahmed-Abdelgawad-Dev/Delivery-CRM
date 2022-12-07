@@ -28,13 +28,11 @@ class CustomerCreateView(CreateView):
 class CustomerUpdateView(UpdateView):
     model         = Customer
     template_name = 'customers/customer_update.html'
-    slug_field    = 'slug'
     form_class    = CustomerForm
 
 
 class CustomerDeleteView(DeleteView):
     model               = Customer
     template_name       = 'customers/customer_delete.html'
-    slug_field          = 'slug'
     context_object_name = 'customer_'
     success_url         = reverse_lazy('customer_list')
