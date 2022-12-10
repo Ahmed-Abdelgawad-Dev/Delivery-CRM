@@ -11,7 +11,7 @@ class Order(models.Model):
     delivered = models.BooleanField(default=False)
     
     def __str__(self):
-        return f"{self.customer.name} | Order: {self.id} | Delivered: {self.delivered} | Paid: {self.paid}"
+        return f"{self.customer.name} | {self.id} | Active: {self.active} | Delivered: {self.delivered} | Paid: {self.paid}"
     
     class Meta:
         ordering = ['-created']
@@ -26,7 +26,8 @@ class OrderItem(models.Model):
     
     
     def __str__(self):
-       return str("{}'s {}".format(self.order.customer.name, self.order.id))
+    #    return str("{}'s {}".format(self.order.customer.name, self.order.id))
+       return str(self.item.name)
 
     class Meta:
         ordering = ['-created']

@@ -1,0 +1,15 @@
+{% extends 'core/_base.html' %}
+{% block content %}
+<div>
+    <h1>Order Details</h1>
+    {% for order_item in order_items %}
+        {% if order_item.id == order_item.order.id %}
+        <p>ID: {{order_item.order.id}}</p>
+        <p>Name: {{order_item}}</p>
+        <p>Quantity: {{order_item.quantity}}</p>
+        <p>Price: {{order_item.price}}</p>
+        <p>Created: {{order_item.created}}</p>
+        {% endif %}
+    {% endfor %}
+</div>
+{% endblock %}

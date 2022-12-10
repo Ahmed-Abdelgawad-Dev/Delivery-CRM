@@ -4,4 +4,4 @@ from customers.models import Customer
 class CustomerForm(ModelForm):
     class Meta:
         model = Customer
-        exclude = ['slug']
+        fields = '__all__'

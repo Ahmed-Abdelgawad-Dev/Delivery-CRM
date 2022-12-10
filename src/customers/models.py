@@ -1,11 +1,10 @@
 
 from django.db import models
-from django.utils.text import slugify
 
 
 class Customer(models.Model):
     name        = models.CharField(max_length=255, unique=True)
-    mobile      = models.CharField(max_length=50)
+    mobile      = models.CharField(max_length=12, unique=True)
     address     = models.TextField(null=False, blank=False)
     has_order   = models.BooleanField(default=False)
     created     = models.DateTimeField(auto_now_add=True)
