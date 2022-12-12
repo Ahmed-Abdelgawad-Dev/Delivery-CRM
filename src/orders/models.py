@@ -1,4 +1,3 @@
-from django.urls import reverse
 from django.db import models
 from customers.models import Customer
 from items.models import Item

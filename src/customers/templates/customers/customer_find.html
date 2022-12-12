@@ -1,0 +1,23 @@
+{% extends 'core/_base.html' %}
+{% block content %}
+<h5>Find a customer by mobile first:</h5>
+        <form action="" >
+            <input type="text" name="query" id="query" placeholder="Find a Customer By Mobile">
+            <input type="submit" value="Find">
+            <br>
+            <a href="{% url 'customer_list' %}">All customers</a>
+        </form>
+        <div>
+            {% for customer in result %}
+                <div><br>
+                    <a style="text-decoration: none;" href="">
+                        <span style="color: brown;">({{customer.id}}) </span>
+                        <span style="color: cornflowerblue;">{{customer.name|upper}}</span>
+                        <span style="color: red;">{{customer.mobile}}</span>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+    

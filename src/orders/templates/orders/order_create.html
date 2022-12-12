@@ -2,33 +2,28 @@
 {% block content %}
     <div>
         <h1>Create order</h1>
-        <h5>Find a customer by mobile first:</h5>
-        <form id="find-customer" action="" method="get">
-            <div>
-                <label for="query">Enter customer's mobile number:</label><br>
-                <input type="text" name="query" id="query">
+        <div>
+            <a href="{% url 'customer_find' %}">find a customer by mobile:</a>
+            <form action="" method="get">
+                <input type="text" placeholder="Enter a mobile" name="mobile">
                 <input type="submit" value="Find">
-            </div>
-            <br><br>
-            <div>
-                {% for customer in result %}   
-                    <a href="">{{customer.name}}</a>
-                    <p>{{customer.id}}</p>
-                    <p>{{customer.mobile}}</p>
-                    <p>{{customer.address}}</p>
-                    <p>{{customer.created}}</p>
-                {% endfor %}
-            </div><br>
-        </form>
-        <h6>Customer Information:</h6>
-        <div>
-            <label for="name">Name</label><br>
-            <input type="text" name="customer" id="name">
+            </form>
+            <h6>Search result</h6>
+            <p style="color: brown;">{{customer.id}} <span style="color: blue;">{{customer.name}} </span><span style="color: red;">{{customer.mobile}}</span></p>
         </div>
-        <div>
-            <label for="mobile">Mobile</label><br>
-            <input type="tel" name="mobile" id="mobile">
-        </div>
+        <br>
+        <form action="" method="post">{% csrf_token %}
+            
+            <input type="text" name="name" placeholder="customer" 
+            value="{{customer.name}}">
+            <input type="text" name="mobile" placeholder="mobile" value="{{customer.mobile}}">
+            <input type="text" name="address" placeholder="address" value="{{customer.address}}">
+            <input type="text" name="order" placeholder="order" value="{{order.id}}">
+            <input type="submit" value="Save">
+        </form>     
+        <h6>Result:</h6>
+        <p>{{customer}}</p>
+
     </div>
-{% endblock %}
+    {% endblock %}
     
