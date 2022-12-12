@@ -2,14 +2,8 @@
 {% block content %}
 <div>
     <h1>Order Details</h1>
-    {% for order_item in order_items %}
-        {% if order_item.id == order_item.order.id %}
-        <p>ID: {{order_item.order.id}}</p>
-        <p>Name: {{order_item}}</p>
-        <p>Quantity: {{order_item.quantity}}</p>
-        <p>Price: {{order_item.price}}</p>
-        <p>Created: {{order_item.created}}</p>
-        {% endif %}
+    {% for item in order_list %}
+        <p>Order({{item.order.id}}) | (KG){{item.quantity}} | {{item}} | (LE){{item.price}} </p>
     {% endfor %}
 </div>
 {% endblock %}

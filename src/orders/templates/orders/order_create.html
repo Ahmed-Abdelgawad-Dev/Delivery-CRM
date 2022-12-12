@@ -2,9 +2,33 @@
 {% block content %}
     <div>
         <h1>Create order</h1>
-        
-    </div>    
-    <div>
+        <h5>Find a customer by mobile first:</h5>
+        <form id="find-customer" action="" method="get">
+            <div>
+                <label for="query">Enter customer's mobile number:</label><br>
+                <input type="text" name="query" id="query">
+                <input type="submit" value="Find">
+            </div>
+            <br><br>
+            <div>
+                {% for customer in result %}   
+                    <a href="">{{customer.name}}</a>
+                    <p>{{customer.id}}</p>
+                    <p>{{customer.mobile}}</p>
+                    <p>{{customer.address}}</p>
+                    <p>{{customer.created}}</p>
+                {% endfor %}
+            </div><br>
+        </form>
+        <h6>Customer Information:</h6>
+        <div>
+            <label for="name">Name</label><br>
+            <input type="text" name="customer" id="name">
+        </div>
+        <div>
+            <label for="mobile">Mobile</label><br>
+            <input type="tel" name="mobile" id="mobile">
+        </div>
     </div>
 {% endblock %}
     

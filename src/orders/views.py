@@ -1,28 +1,40 @@
 from django.shortcuts import render
 from django.shortcuts import get_object_or_404
-import datetime
 from items.models import Item
 
 from customers.models import Customer
 from orders.models import Order, OrderItem
+from orders.forms import OrderForm, OrderItemForm
+from customers.forms import CustomerForm
 
 
 
 
+def order_create(request):
+    query=request.GET.get('query')
+    print(f'--------------- {query} ----------------')
+    result = Customer.objects.filter(mobile=query)
+    
+    context = {
+        'result':result,
+    }
+    return render (request, 'orders/order_create.html', context)
 
 
 def order_list(request):
-    # orders = Order.objects.filter(created__gt=datetime.date.today() - datetime.timedelta(days=1))
-    orders = Order.objects.all()
+    orders = Order.objects.filter(active=True)
     context = {'orders':orders}
     return render(request, 'orders/order_list.html', context)
-    
+
 
 def order_detail(request, id):
-    order_items = OrderItem.objects.all()
-    context = {'order_items': order_items}
-    return render (request, 'orders/order_detail.html', {'order_items': order_items})
-
-# def order_create(request):
-#     return render(request, 'orders/order_create.html')
-    
+    order_list=[]
+    orders = Order.objects.filter(active=True)
+    order_items = OrderItem.objects.filter(order=id)
+    for order in orders:
+        for order_item in order_items:
+            if order_item.order.id == order.id:
+                order_list.append(order_item)
+            
+    context = {'order_list': order_list}
+    return render (request, 'orders/order_detail.html', context)
