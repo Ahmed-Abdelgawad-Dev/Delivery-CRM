@@ -4,7 +4,7 @@ from items.models import Item
 
 
 class Order(models.Model):
-    customer  = models.ForeignKey(Customer, on_delete=models.SET_NULL, null=True)
+    customer  = models.ForeignKey(Customer, on_delete=models.CASCADE, null=True)
     created   = models.DateTimeField(auto_now_add=True)
     paid      = models.BooleanField(default=False)
     active    = models.BooleanField(default=False)

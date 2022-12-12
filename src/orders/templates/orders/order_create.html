@@ -4,26 +4,26 @@
         <h1>Create order</h1>
         <div>
             <a href="{% url 'customer_find' %}">find a customer by mobile:</a>
-            <form action="" method="get">
+            <form action="" method="get" id="forms">
                 <input type="text" placeholder="Enter a mobile" name="mobile">
                 <input type="submit" value="Find">
             </form>
             <h6>Search result</h6>
-            <p style="color: brown;">{{customer.id}} <span style="color: blue;">{{customer.name}} </span><span style="color: red;">{{customer.mobile}}</span></p>
+            <p style="color: brown;">{{customer.id}} <span style="color: blue;">{{customer.name}} </span><span style="color: red;">{{customer.mobile}}</span> <span>ID: {{order.id}}</span></p>
         </div>
         <br>
         <form action="" method="post">{% csrf_token %}
             
             <input type="text" name="name" placeholder="customer" 
-            value="{{customer.name}}">
-            <input type="text" name="mobile" placeholder="mobile" value="{{customer.mobile}}">
-            <input type="text" name="address" placeholder="address" value="{{customer.address}}">
-            <input type="text" name="order" placeholder="order" value="{{order.id}}">
+            value="{{customer.name}}" id="name">
+            <input type="text" name="mobile" placeholder="mobile" value="{{customer.mobile}}" id="mobile">
+            <input type="text" name="address" placeholder="address" value="{{customer.address}}" id="address">
             <input type="submit" value="Save">
         </form>     
         <h6>Result:</h6>
-        <p>{{customer}}</p>
-
+        <p>customer ID: {{customer}}</p>
+        <p>Order ID: {{order.id}}</p>
+        
     </div>
     {% endblock %}
     
