@@ -10,7 +10,7 @@
         <div>
             {% for customer in result %}
                 <div><br>
-                    <a style="text-decoration: none;" href="">
+                    <a style="text-decoration: none;" href="{{customer.get_absolute_url}}">
                         <span style="color: brown;">({{customer.id}}) </span>
                         <span style="color: cornflowerblue;">{{customer.name|upper}}</span>
                         <span style="color: red;">{{customer.mobile}}</span>

@@ -46,4 +46,5 @@ def order_detail(request, id):
                 order_list.append(order_item)
 
     context = {"order_list": order_list}
+    print(context)
     return render(request, "orders/order_detail.html", context)
