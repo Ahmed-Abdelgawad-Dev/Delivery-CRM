@@ -19,6 +19,7 @@
 
 /**************************************** Start Global Vars ****************************************/
 :root {
+    --main: #2a7cc4;
     --yellow-color:#ffc107;
     --red-color:#f22e24;
 }
@@ -33,13 +34,59 @@
 }
 
 
-/**************************************** Start Navbar ****************************************/
-
-/**************************************** End Navbar ****************************************/
-
-
-
+/********** Start Navbar **********/
 #logo {
     font-family: 'Rubik Spray Paint', cursive;
 }
 
+
+/********** End Navbar **********/
+
+/********** Start Body **********/
+
+
+/********** End Body **********/
+
+/********** Start Orders **********/
+#orders {
+    text-align: center;
+}
+
+.create {
+    color: var(--main);
+    background-color: white;
+    border: 1px solid var(--main);
+    padding: 3px;
+    margin: 2px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+}
+.create:hover {
+    background-color: var(--main);
+    color: white;
+}
+/********** End Orders **********/
+
+
+/********** Start Body **********/
+.landing{
+    position: relative;
+    z-index: -5;
+    
+    
+}
+.landing .image{
+    position: absolute;
+    background-image: url('../images/background_photo3.png');
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vw;
+    opacity: .4;
+    object-fit: cover;
+    align-items: center;
+    align-content: center;
+    left: 50%;
+}
+
+/********** End Body **********/

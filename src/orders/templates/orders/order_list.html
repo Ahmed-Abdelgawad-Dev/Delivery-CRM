@@ -1,15 +1,31 @@
 {% extends 'core/_base.html' %}
 {% block content %}
-    <div>
-        <h1>Order's List</h1>
-        <a href="{% url 'order_create' %}">create order</a>
-        <br><br>   
-        <div>
+<div id="orders">
+    <a class="create" href="{% url 'order_create' %}">create order</a>
+    <div class="mt-1">
+        <table class="table table-responsive table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>N.</th>
+                    <th>Customer Name</th>
+                    <th>Created At</th>
+                    <th>Active</th>
+                </tr>
+            </thead>
+            <tbody>
             {% for order in orders %}
-            <p><a href="{% url 'order_detail' order.id %}">({{order.id}}) {{order.customer}}</a></p>
-            <p>created at: {{order.created}} | Paid: {{order.paid}} | Active:{{order.active}} | Delivered: {{order.delivered}}</p>
+                <tr>
+                    <th >{{order.id}}</th>
+                    <td ><a href="{% url 'order_detail' order.id %}">
+                        {{order.customer}}
+                    </a></td>
+                    <td>{{order.created|time}}</td>
+                    <td>{% if order.active %} Yes {% else %} NO {% endif %}</td>
+                </tr>
             {% endfor %}
-        </div>
-    </div>    
+            </tbody>
+        </table>
+    </div>
+</div>
+
 {% endblock %}
-    
