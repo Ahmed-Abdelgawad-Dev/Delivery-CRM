@@ -4,10 +4,10 @@ from items.models import Item
 
 
 class Order(models.Model):
-    customer  = models.ForeignKey(Customer, on_delete=models.CASCADE, null=True)
-    created   = models.DateTimeField(auto_now_add=True)
-    paid      = models.BooleanField(default=False)
-    active    = models.BooleanField(default=False)
+    customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
+    created = models.DateTimeField(auto_now_add=True)
+    paid = models.BooleanField(default=False)
+    active = models.BooleanField(default=False)
     delivered = models.BooleanField(default=False)
 
     def __str__(self):
@@ -18,14 +18,14 @@ class Order(models.Model):
 
 
 class OrderItem(models.Model):
-    order    = models.ForeignKey(Order, on_delete=models.SET_NULL, null=True)
-    item     = models.ForeignKey(Item, on_delete=models.SET_NULL, null=True)
+    order = models.ForeignKey(Order, on_delete=models.CASCADE)
+    item = models.ForeignKey(Item, on_delete=models.CASCADE)
     quantity = models.IntegerField(null=True, blank=True, default=1)
-    price    = models.DecimalField(max_digits=5, decimal_places=2, default=0)
-    created  = models.DateTimeField(auto_now_add=True)
+    price = models.DecimalField(max_digits=5, decimal_places=2, default=0)
+    created = models.DateTimeField(auto_now_add=True)
 
-    def __str__(self):
-        return str(self.item.name)
+    # def __str__(self):
+    #     return str(self.item.name)
 
     class Meta:
         ordering = ["-created"]

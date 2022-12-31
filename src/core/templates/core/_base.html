@@ -33,10 +33,12 @@
             <div id="header">
                 {% include 'core/parts/navbar.html' %}
             </div>      
-            <div class="landing animate__animated animate__bounce ">
-                <div class="image mt-1 img-fluid"></div>                   
+            <div class=>
+                <div class="landing animate__animated animate__slideInLeft animate__delay-0.5s">
+                    <div class="image mt-1 img-fluid"></div>
+                </div>
+                <div id="body" style="margin-top: 80px;" class="content">{% block content %} {% endblock %}</div>
             </div>
-            <div id="body" style="margin-top: 80px;" class="content">{% block content %} {% endblock %}</div>
             <div id="footer">{% include 'core/parts/footer.html' %}</div>
         </div>
     <!-------------------- Bootstrap JS  -------------------->

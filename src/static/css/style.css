@@ -20,6 +20,7 @@
 /**************************************** Start Global Vars ****************************************/
 :root {
     --main: #2a7cc4;
+    --bg-color: #f7fafd;
     --yellow-color:#ffc107;
     --red-color:#f22e24;
 }
@@ -31,6 +32,10 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+
+body{
+    background-color: var(--bg-color);
 }
 
 
@@ -48,7 +53,7 @@
 /********** End Body **********/
 
 /********** Start Orders **********/
-#orders {
+#orders div{
     text-align: center;
 }
 
@@ -71,6 +76,7 @@
 
 /********** Start Body **********/
 .landing{
+    
     position: relative;
     z-index: -5;
     
@@ -82,11 +88,12 @@
     background-repeat: no-repeat;
     width: 100vw;
     height: 100vw;
-    opacity: .4;
+    opacity: .3;
     object-fit: cover;
-    align-items: center;
-    align-content: center;
     left: 50%;
 }
 
 /********** End Body **********/
+a{
+    text-decoration: none;
+}

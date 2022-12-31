@@ -1,13 +1,14 @@
 {% extends 'core/_base.html' %}
 {% block content %}
 <div id="orders">
-    <a class="create" href="{% url 'order_create' %}">create order</a>
+    <a class="create" href="{% url 'order_create' %}">Order create</a>
     <div class="mt-1">
         <table class="table table-responsive table-bordered table-hover">
             <thead>
                 <tr>
                     <th>N.</th>
                     <th>Customer Name</th>
+                    <th>Mobile</th>
                     <th>Created At</th>
                     <th>Active</th>
                 </tr>
@@ -19,6 +20,7 @@
                     <td ><a href="{% url 'order_detail' order.id %}">
                         {{order.customer}}
                     </a></td>
+                    <td>{{order.customer.mobile}}</td>
                     <td>{{order.created|time}}</td>
                     <td>{% if order.active %} Yes {% else %} NO {% endif %}</td>
                 </tr>
