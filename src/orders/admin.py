@@ -3,9 +3,9 @@ from orders.models import Order, OrderItem
 
 
 class OrderItemAdmin(admin.TabularInline):
-    list_display = ["order", "id", "item", "quantity", "price", "created"]
-    list_filter = ["order", "id", "item", "quantity", "price", "created"]
-    search_fields = ["order", "id", "item", "quantity", "price", "created"]
+    list_display = ["order", "id", "item","quantity", "price", "created"]
+    list_filter = ["order", "id", "item", "created"]
+    search_fields = ["order", "id", "item", "created",]
     model = OrderItem
 
 

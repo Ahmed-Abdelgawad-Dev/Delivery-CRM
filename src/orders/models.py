@@ -11,7 +11,7 @@ class Order(models.Model):
     delivered = models.BooleanField(default=False)
 
     def __str__(self):
-        return f"{self.customer.name} | {self.id} | Active: {self.active} | Delivered: {self.delivered} | Paid: {self.paid}"
+        return f"{self.id} | Active: {self.active}"
 
     class Meta:
         ordering = ["-created"]
@@ -20,12 +20,12 @@ class Order(models.Model):
 class OrderItem(models.Model):
     order = models.ForeignKey(Order, on_delete=models.CASCADE)
     item = models.ForeignKey(Item, on_delete=models.CASCADE)
-    quantity = models.IntegerField(null=True, blank=True, default=1)
-    price = models.DecimalField(max_digits=5, decimal_places=2, default=0)
+    quantity = models.PositiveIntegerField(default=1, editable=True)
     created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
 
-    # def __str__(self):
-    #     return str(self.item.name)
+    def __str__(self):
+        return str(self.item.name)
 
     class Meta:
         ordering = ["-created"]

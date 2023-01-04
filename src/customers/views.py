@@ -13,12 +13,13 @@ class CustomerListView(ListView):
     model               = Customer
     template_name       = 'customers/customer_list.html'
     context_object_name = 'customers_list'
-    
-    
+
+
+
 class CustomerDetailView(DetailView):
     model               = Customer
     template_name       = 'customers/customer_detail.html'
-    context_object_name = 'customer_detail'
+    context_object_name = 'customer_'
 
 class CustomerCreateView(CreateView):
     model         = Customer
@@ -42,5 +43,5 @@ class CustomerDeleteView(DeleteView):
 def find_customer(request):
     query=request.GET.get('query')
     result = Customer.objects.filter(mobile=query)
-    context = {'result':result}  
+    context = {'result':result}
     return render (request, 'customers/customer_find.html', context)

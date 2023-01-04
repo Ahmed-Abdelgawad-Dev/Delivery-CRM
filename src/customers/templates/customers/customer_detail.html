@@ -2,15 +2,17 @@
 {% block content %}
 <a href="{% url 'customer_list' %}">Customers</a> |
 <a href="{% url 'customer_create' %}">Create Customer</a> |
+<a href="{% url 'order_create' %}">Create Order</a> |
+
 <div>
         <h5>Customer's Details:</h5><br>
-        <h6>Name: {{ customer_detail.name }}</h6>
-        <p>ID: {{customer_detail.id}}</p>
-        <p>Tel: {{customer_detail.mobile}}</p>
-        <p>Has Order: {{customer_detail.has_order}}</p>
-        <p>Created at: {{customer_detail.created}}</p>
-        <p>Updated at: {{customer_detail.updated}}</p>
+        <h6>Name: {{ customer_.name }}</h6>
+        <p>ID: {{customer_.id}}</p>
+        <p>Tel: {{customer_.mobile}}</p>
+        <p>Has Order: {{customer_.has_order}}</p>
+        <p>Created at: {{customer_.created}}</p>
+        <p>Updated at: {{customer_.updated}}</p>
 </div>
-<a href="{% url 'customer_update' customer_detail.pk %}">Update Customer</a> | 
-<a href="{% url 'customer_delete' customer_detail.pk %}">Delete Customer</a>
+<a href="{% url 'customer_update' customer_.pk %}">Update Customer</a> |
+<a href="{% url 'customer_delete' customer_.pk %}">Delete Customer</a>
 {% endblock %}

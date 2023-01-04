@@ -1,9 +1,9 @@
 {% extends 'core/_base.html' %}
 {% block content %}
 <div>
-    <h1>Order Details</h1>
-    {% for item in order_list %}
-        <p>Order({{item.order.id}}) | (KG){{item.quantity}} | {{item}} | (LE){{item.price}} </p>
+    <h4>Order List of  <span style="color: darkblue;">{{customer|title}}</span> </h1>
+    {% for item_ in order_list %}
+        <p>N.{{item_.order.id}} | {{item_.item.name}} | {{item_.item.price}} LE</p>
     {% endfor %}
 </div>
 {% endblock %}

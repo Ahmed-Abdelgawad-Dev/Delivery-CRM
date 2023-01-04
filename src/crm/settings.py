@@ -31,7 +31,6 @@ INSTALLED_APPS = [
     # Third Party Apps
     "django_browser_reload",
     "debug_toolbar",
-    
     # My Apps
     'core',
     'customers',
