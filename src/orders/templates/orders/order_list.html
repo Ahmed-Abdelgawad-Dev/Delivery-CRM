@@ -1,8 +1,11 @@
 {% extends 'core/_base.html' %}
 {% block content %}
 <div id="orders">
-    <a class="create" href="{% url 'order_create' %}">Order create</a>
+    <a class="create" href="{% url 'customer_create' %}">Create Customer</a>
+    <a class="create" href="{% url 'item_create' %}">Create Item</a>
+    {% comment %} <a class="create" href="">Create Order</a> {% endcomment %}
     <div class="mt-1">
+        <h4>All Orders</h4>
         <table class="table table-responsive table-bordered table-hover">
             <thead>
                 <tr>
@@ -14,7 +17,7 @@
                 </tr>
             </thead>
             <tbody>
-            {% for order in orders %}
+                {% for order in orders %}
                 <tr>
                     <th >{{order.id}}</th>
                     <td ><a href="{% url 'order_detail' order.id %}">

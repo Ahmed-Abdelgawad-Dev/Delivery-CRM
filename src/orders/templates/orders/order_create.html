@@ -1,13 +1,12 @@
 {% extends 'core/_base.html' %}
 {% block content %}
 <div class="text-center">
-    <h1>CREATE ORDER</h1>
-    <form action="" method="post">
+    <div class="xyz">
+    <form action="" method="post" hx-target="this"  hx-swap="innerHTML">
         {% csrf_token %}
         {{formset.as_p}}
-        <input type="submit" value="Save">
+        <button type="submit" hx-post=".">Save</button>
     </form>
+    </div>
 </div>
-
 {% endblock %}
-

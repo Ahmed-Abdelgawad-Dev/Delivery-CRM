@@ -13,7 +13,7 @@ class OrderAdmin(admin.ModelAdmin):
     list_display = ["customer", "active", "id", "paid", "created", "delivered"]
     list_filter = ["customer", "active", "id", "paid", "created", "delivered"]
     date_hierarchy = "created"
-    search_fields = ["id", "customer__name"]
+    search_fields = ["id", "customer__name", "customer__mobile"]
     inlines = [OrderItemAdmin]
 
 

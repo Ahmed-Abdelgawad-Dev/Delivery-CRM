@@ -1,4 +1,3 @@
-
-// const name = document.getElementById('name').value = '';
-// const mobile = document.getElementById('mobile').value = '';
-// const address = document.getElementById('address').value = '';
+document.body.addEventListener('htmx:configRequest', (e) => {
+    e.detail.headers['X-CSRFToken'] = '{{ csrf_token }}';
+})

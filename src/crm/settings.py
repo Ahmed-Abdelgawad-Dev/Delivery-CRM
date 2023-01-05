@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     # Third Party Apps
     "django_browser_reload",
     "debug_toolbar",
+    "django_htmx",
     # My Apps
     'core',
     'customers',
@@ -47,8 +48,10 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     "django_browser_reload.middleware.BrowserReloadMiddleware",
+    "django_htmx.middleware.HtmxMiddleware",
     "debug_toolbar.middleware.DebugToolbarMiddleware",
     "django_browser_reload.middleware.BrowserReloadMiddleware",
+    
 ]
 
 ROOT_URLCONF = 'crm.urls'

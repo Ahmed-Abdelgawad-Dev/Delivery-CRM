@@ -12,4 +12,3 @@ class OrderItemForm(ModelForm):
     class Meta:
         model = OrderItem
         fields = '__all__'
-

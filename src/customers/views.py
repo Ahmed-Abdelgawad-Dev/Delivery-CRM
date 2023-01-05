@@ -6,6 +6,7 @@ from django.views.generic import (
 
 from customers.models import Customer
 from customers.forms import CustomerForm
+from orders.models import Order
 
 
 
@@ -20,6 +21,12 @@ class CustomerDetailView(DetailView):
     model               = Customer
     template_name       = 'customers/customer_detail.html'
     context_object_name = 'customer_'
+
+    def get_context_data(self, **kwargs):
+        orders = Order.objects.all()
+        context = {'orders': orders}
+        return super().get_context_data(**context)
+
 
 class CustomerCreateView(CreateView):
     model         = Customer
