@@ -1,5 +1,5 @@
 /*! Start Break Points */
-    /*  Small devices (landscape phones, 576px and up)
+/*  Small devices (landscape phones, 576px and up)
     @media (min-width: 576px) { ... }
 
     Medium devices (tablets, 768px and up)
@@ -15,14 +15,12 @@
     @media (min-width: 1400px) { ... } */
 /*! End Break Points */
 
-
-
 /**************************************** Start Global Vars ****************************************/
 :root {
     --main: #2a7cc4;
     --bg-color: #f7fafd;
-    --yellow-color:#ffc107;
-    --red-color:#f22e24;
+    --yellow-color: #ffc107;
+    --red-color: #f22e24;
 }
 
 /**************************************** End Global Vars ****************************************/
@@ -34,7 +32,7 @@
     box-sizing: border-box;
 }
 
-body{
+body {
     background-color: var(--bg-color);
 }
 
@@ -53,7 +51,7 @@ body{
 /********** End Body **********/
 
 /********** Start Orders **********/
-#orders div{
+#orders div {
     text-align: center;
 }
 
@@ -67,22 +65,25 @@ body{
     text-decoration: none;
     font-weight: 500;
 }
+
 .create:hover {
     background-color: var(--main);
     color: white;
 }
+
 /********** End Orders **********/
 
 
 /********** Start Body **********/
-.landing{
-    
+.landing {
+
     position: relative;
     z-index: -5;
-    
-    
+
+
 }
-.landing .image{
+
+.landing .image {
     position: absolute;
     background-image: url('../images/background_photo3.png');
     background-repeat: no-repeat;
@@ -94,6 +95,6 @@ body{
 }
 
 /********** End Body **********/
-a{
+a {
     text-decoration: none;
 }

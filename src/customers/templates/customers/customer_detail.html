@@ -2,7 +2,7 @@
 {% block content %}
 <a href="{% url 'customer_list' %}">Customers</a> |
 <a href="{% url 'customer_create' %}">Create Customer</a> |
-<a href="{% url 'order_create' customer_.id %}">Edit Order</a> |
+<a href="{% url 'order_create' customer_.id %}">Create||Edit   Order</a> |
 <div>
         {% for order in orders %}
                 {% if order.customer.id == customer_.id %}

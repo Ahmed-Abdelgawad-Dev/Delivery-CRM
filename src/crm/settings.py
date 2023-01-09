@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     "django_browser_reload",
     "debug_toolbar",
     "django_htmx",
+    'mathfilters',
     # My Apps
     'core',
     'customers',

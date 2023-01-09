@@ -1,10 +1,52 @@
 {% extends 'core/_base.html' %}
+{% load mathfilters %}
 {% block content %}
 <div>
-    <h4>Serial:({{order.id}}) <span style="color: darkblue;"><a href="{% url 'customer_detail' order.customer.id %}">{{customer|title}}</a></span></h4>
-        <a href="{% url 'order_create' order.customer.id %}">Edit Order</a> |
-        {% for item_ in order_list %}
-            <p>{{item_.item.name}} | {{item_.item.price}} LE | {{item_.quantity}} kg</p>
-        {% endfor %}
+    {% if order.id and order_list|length > 0 %}
+    <div>
+        <h6>Order Number: {{order.id}} | Created:
+        <span class="text-primary">{{order.created|date:"D d M Y"}}</span>@ <span
+            class="text-primary">{{order.created|time:"H:i"}}</span>
+    </h6>
+    <h6>
+        Customer Name:<a class="text-primary fs-5 fw-bold" href="{% url 'customer_detail' order.customer.id %}">
+            {{customer|upper}}</a>
+    </h6>
+    <a class="create" href="{% url 'order_create' order.customer.id %}">Edit Order</a>
 </div>
+<table class="table table-hover mt-1">
+    <thead>
+        <tr class="table-primary">
+            <th scope="col">No</th>
+            <th scope="col">Item</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Price</th>
+            <th scope="col">Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% if order_list %}
+        {% for item_ in order_list %}
+        <tr>
+            <th class="fw-normal">{{forloop.counter}}</th>
+            <td>{{item_.item.name}}</td>
+            <td>{{item_.quantity}}</td>
+            <td>{{item_.item.price}}</td>
+            <td>{{item_.item.price|mul:item_.quantity}}</td>
+        </tr>
+        {% endfor %}
+        <tr class="fw-bold text-danger">
+            <td>Grand Total Price</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>{{grand_total}}</td>
+        </tr>
+        {% endif %}
+    </tbody>
+</table>
+</div>
+    {% else %}
+    {% include "orders/order_detail_empty_page.html" %}
+{% endif %}
 {% endblock %}
