@@ -2,19 +2,24 @@
 {% block content %}
 <a href="{% url 'customer_list' %}">Customers</a> |
 <a href="{% url 'customer_create' %}">Create Customer</a> |
-<a href="{% url 'order_create' customer_.id %}">Create||Edit   Order</a> |
+<a href="{% url 'order_create' customer_.id %}">Create||Edit Order</a> |
 <div>
         {% for order in orders %}
-                {% if order.customer.id == customer_.id %}
-                <a style="color: red;" href="{% url 'order_detail' order.id %}">Customer's order list</a> |
-                {% endif %}
+        {% if order.customer.id == customer_.id %}
+        <a style="color: red;" href="{% url 'order_detail' order.id %}">Customer's order list</a> |
+        {% endif %}
         {% endfor %}
         <h5>Customer's Details:</h5><br>
         <h6>Name: {{ customer_.name|title }}</h6>
         <p>ID: {{customer_.id}}</p>
         <p>Tel: {{customer_.mobile}}</p>
-        <p>Has Order: {{customer_.has_order}}</p>
-        <p>Created at: {{customer_.created}}</p>
+        <p>Has Order:
+                {% if customer_.has_order == True %}
+                yes
+                {% else %}
+                No
+                {% endif %}
+        <p>Created@: {{customer_.created}}</p>
 </div>
 <a href="{% url 'customer_update' customer_.pk %}">Update Customer</a> |
 <a href="{% url 'customer_delete' customer_.pk %}">Delete Customer</a>

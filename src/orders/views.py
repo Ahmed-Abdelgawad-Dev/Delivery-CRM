@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
-from django.urls import reverse, reverse_lazy
+from django.urls import reverse
+from django.http import HttpResponse
 from django.forms import inlineformset_factory
 
 from customers.models import Customer
@@ -7,6 +8,29 @@ from orders.models import Order, OrderItem
 
 
 
+def order_status_toggler(request, id):
+    order = Order.objects.get(id=id)
+    customer = Customer.objects.get(id=order.customer.id)
+
+    if order.active == True:
+        customer.has_order = True
+    if order.active == False:
+        customer.has_order = False
+        return HttpResponse("ensync order.active  with customer.has_order ")
+    return (redirect("order_list", permanent=True))
+
+
+
+
+
+
+
+
+def order_delete(request, id):
+    order = Order.objects.get(id=id)
+    order.customer.has_order = False
+    order.delete()
+    return HttpResponse("Order deleted!")
 
 def order_create(request, id):
     customer = Customer.objects.get(id=id)
@@ -25,7 +49,8 @@ def order_create(request, id):
     return render(request, 'orders/order_create.html', {'formset': formset})
 
 def order_list(request):
-    orders = Order.objects.filter(active=True)
+    # orders = Order.objects.filter(active=True)
+    orders = Order.objects.all()
     context = {"orders": orders}
     return render(request, "orders/order_list.html", context)
 
@@ -40,9 +65,6 @@ def order_detail(request, id):
     grand_total = 0
     for obj in order_list:
         grand_total += float(obj.item.price*obj.quantity)
-        
-        
-        
     context = {
         "order_list": order_list, "customer": customer,
         'order': order, 'grand_total': grand_total

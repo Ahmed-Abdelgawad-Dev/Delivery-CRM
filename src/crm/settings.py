@@ -29,10 +29,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Third Party Apps
-    "django_browser_reload",
-    "debug_toolbar",
+    'crispy_forms',
     "django_htmx",
     'mathfilters',
+    "debug_toolbar",
+    "django_browser_reload",
     # My Apps
     'core',
     'customers',

@@ -13,21 +13,23 @@
                     <th>Customer Name</th>
                     <th>Mobile</th>
                     <th>Created At</th>
-                    <th>Active</th>
+                    <th>Status</th>
+                    <th>Delete</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody hx-confirm="Are you sure?" hx-target="closest tr" hx-swap="outerHTML swap:1s">
                 {% for order in orders %}
                 <tr>
-                    <th >{{order.id}}</th>
-                    <td ><a href="{% url 'order_detail' order.id %}">
-                        {{order.customer}}
-                    </a></td>
+                    <th>{{order.id}}</th>
+                    <td><a href="{% url 'order_detail' order.id %}">
+                            <span class="fw-semibold">{{order.customer}}</span>
+                        </a></td>
                     <td>{{order.customer.mobile}}</td>
                     <td>{{order.created|time}}</td>
-                    <td>{% if order.active %} Yes {% else %} NO {% endif %}</td>
+                    <td><a href="#">{% if order.active %} <span style="color: red;">Open</span> {% else %} <span class="text-success">Closed</span> {% endif %}</a></td>
+                    <td class="bg-danger rounded-1"><a class="text-light fw-semibold" href="{% url 'order_delete' order.id %}">delete</a></td>
                 </tr>
-            {% endfor %}
+                {% endfor %}
             </tbody>
         </table>
     </div>
