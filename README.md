@@ -4,7 +4,7 @@
 </p>
 
 ---
-A full stack Delivery CRM (Customer Relation Managment) System made using Django.
+<h5>A full stack Delivery CRM (Customer Relation Managment) System made using Django.</h5>
 
 ##### Database
 
