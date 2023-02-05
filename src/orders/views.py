@@ -19,13 +19,6 @@ def order_status_toggler(request, id):
         return HttpResponse("ensync order.active  with customer.has_order ")
     return (redirect("order_list", permanent=True))
 
-
-
-
-
-
-
-
 def order_delete(request, id):
     order = Order.objects.get(id=id)
     order.customer.has_order = False
@@ -48,12 +41,6 @@ def order_create(request, id):
         formset = ItemInlineFormSet(instance=order)
     return render(request, 'orders/order_create.html', {'formset': formset})
 
-def order_list(request):
-    # orders = Order.objects.filter(active=True)
-    orders = Order.objects.all()
-    context = {"orders": orders}
-    return render(request, "orders/order_list.html", context)
-
 def order_detail(request, id):
     customer, order_list, order = None, [], None
     order = Order.objects.get(id=id)
@@ -71,3 +58,8 @@ def order_detail(request, id):
     }
     return render(request, "orders/order_detail.html", context)
 
+def order_list(request):
+    # orders = Order.objects.filter(active=True)
+    orders = Order.objects.all()
+    context = {"orders": orders}
+    return render(request, "orders/order_list.html", context)

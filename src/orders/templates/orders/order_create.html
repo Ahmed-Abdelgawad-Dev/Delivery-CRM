@@ -1,11 +1,12 @@
 {% extends 'core/_base.html' %}
-{% load crispy_forms_tags %}
+{% comment %} {% load crispy_forms_tags %} {% endcomment %}
 {% block content %}
 <div class="text-center">
     <div class="xyz">
     <form action="" method="post" hx-target="this"  hx-swap="innerHTML">
         {% csrf_token %}
-        {{formset|crispy}}
+        {% comment %} {{formset|crispy}} {% endcomment %}
+        {{formset.as_p}}
         <button type="submit" hx-post=".">Save</button>
     </form>
     </div>
