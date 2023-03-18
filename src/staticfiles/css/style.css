@@ -1,0 +1,100 @@
+/*! Start Break Points */
+/*  Small devices (landscape phones, 576px and up)
+    @media (min-width: 576px) { ... }
+
+    Medium devices (tablets, 768px and up)
+    @media (min-width: 768px) { ... }
+
+    Large devices (desktops, 992px and up)
+    @media (min-width: 992px) { ... }
+
+    X-Large devices (large desktops, 1200px and up)
+    @media (min-width: 1200px) { ... }
+
+    XX-Large devices (larger desktops, 1400px and up)
+    @media (min-width: 1400px) { ... } */
+/*! End Break Points */
+
+/**************************************** Start Global Vars ****************************************/
+:root {
+    --main: #2a7cc4;
+    --bg-color: #f7fafd;
+    --yellow-color: #ffc107;
+    --red-color: #f22e24;
+}
+
+/**************************************** End Global Vars ****************************************/
+
+/****************************************? Start Layout ****************************************/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+}
+
+
+/********** Start Navbar **********/
+#logo {
+    font-family: 'Rubik Spray Paint', cursive;
+}
+
+
+/********** End Navbar **********/
+
+/********** Start Body **********/
+
+
+/********** End Body **********/
+
+/********** Start Orders **********/
+#orders div {
+    text-align: center;
+}
+
+.create {
+    color: var(--main);
+    background-color: white;
+    border: 1px solid var(--main);
+    padding: 3px;
+    margin: 2px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.create:hover {
+    background-color: var(--main);
+    color: white;
+}
+
+/********** End Orders **********/
+
+
+/********** Start Body **********/
+.landing {
+
+    position: relative;
+    z-index: -5;
+
+
+}
+
+.landing .image {
+    position: absolute;
+    background-image: url('../images/background_photo3.png');
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vw;
+    opacity: .3;
+    object-fit: cover;
+    left: 50%;
+}
+
+/********** End Body **********/
+a {
+    text-decoration: none;
+}

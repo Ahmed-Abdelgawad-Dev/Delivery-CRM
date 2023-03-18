@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'customers',
     'items',
     'orders',
+    'reports',
 ]
 
 MIDDLEWARE = [
@@ -53,7 +54,6 @@ MIDDLEWARE = [
     "django_htmx.middleware.HtmxMiddleware",
     "debug_toolbar.middleware.DebugToolbarMiddleware",
     "django_browser_reload.middleware.BrowserReloadMiddleware",
-    
 ]
 
 ROOT_URLCONF = 'crm.urls'

@@ -1,4 +1,5 @@
 from django.contrib import admin
-from django.contrib.auth.models import Group
 
-admin.site.unregister(Group)
+admin.site.site_header = 'Wassal Delivery CRM'
+admin.site.site_title = 'Wassal Admin Panel'
+admin.site.index_title = "Admin Panel"

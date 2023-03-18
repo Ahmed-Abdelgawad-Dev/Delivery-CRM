@@ -1,0 +1,33 @@
+{% extends 'core/_base.html' %}
+{% block content %}
+<div class="text-center">
+    <h3 style="background-color: rgb(226, 225, 225);" class="p-2 m-2 fw-bold">Orders made today</h3>
+    <div class="mt-1">
+        <table class="table table-responsive table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>N.</th>
+                    <th>Customer Name</th>
+                    <th>Mobile</th>
+                    <th>Created At</th>
+                    <th>Status</th>
+                    <th>Grand Total</th>
+                </tr>
+            </thead>
+            <tbody hx-confirm="Are you sure?" hx-target="closest tr" hx-swap="outerHTML swap:1s">
+                {% for order_ in orders %}
+                <tr>
+                    <th>{{order_.id}}</th>
+                    <th>{{order_.order.customer}}</th>
+                    <td>{{order_.order.customer.mobile}}</td>
+                    <td>{{order_.order.created}}</td>
+                    <td>{% if order_.active %} <span class="text-danger">Open</span> {% else %} <span>Closed</span> {% endif %}</td>
+                </tr>
+                <td>Grand Total</td>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

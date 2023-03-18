@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><style type="text/css">.swal-icon--error{border-color:#f27474;-webkit-animation:animateErrorIcon .5s;animation:animateErrorIcon .5s}.swal-icon--error__x-mark{position:relative;display:block;-webkit-animation:animateXMark .5s;animation:animateXMark .5s}.swal-icon--error__line{position:absolute;height:5px;width:47px;background-color:#f27474;display:block;top:37px;border-radius:2px}.swal-icon--error__line--left{-webkit-transform:rotate(45deg);transform:rotate(45deg);left:17px}.swal-icon--error__line--right{-webkit-transform:rotate(-45deg);transform:rotate(-45deg);right:16px}@-webkit-keyframes animateErrorIcon{0%{-webkit-transform:rotateX(100deg);transform:rotateX(100deg);opacity:0}to{-webkit-transform:rotateX(0deg);transform:rotateX(0deg);opacity:1}}@keyframes animateErrorIcon{0%{-webkit-transform:rotateX(100deg);transform:rotateX(100deg);opacity:0}to{-webkit-transform:rotateX(0deg);transform:rotateX(0deg);opacity:1}}@-webkit-keyframes animateXMark{0%{-webkit-transform:scale(.4);transform:scale(.4);margin-top:26px;opacity:0}50%{-webkit-transform:scale(.4);transform:scale(.4);margin-top:26px;opacity:0}80%{-webkit-transform:scale(1.15);transform:scale(1.15);margin-top:-6px}to{-webkit-transform:scale(1);transform:scale(1);margin-top:0;opacity:1}}@keyframes animateXMark{0%{-webkit-transform:scale(.4);transform:scale(.4);margin-top:26px;opacity:0}50%{-webkit-transform:scale(.4);transform:scale(.4);margin-top:26px;opacity:0}80%{-webkit-transform:scale(1.15);transform:scale(1.15);margin-top:-6px}to{-webkit-transform:scale(1);transform:scale(1);margin-top:0;opacity:1}}.swal-icon--warning{border-color:#f8bb86;-webkit-animation:pulseWarning .75s infinite alternate;animation:pulseWarning .75s infinite alternate}.swal-icon--warning__body{width:5px;height:47px;top:10px;border-radius:2px;margin-left:-2px}.swal-icon--warning__body,.swal-icon--warning__dot{position:absolute;left:50%;background-color:#f8bb86}.swal-icon--warning__dot{width:7px;height:7px;border-radius:50%;margin-left:-4px;bottom:-11px}@-webkit-keyframes pulseWarning{0%{border-color:#f8d486}to{border-color:#f8bb86}}@keyframes pulseWarning{0%{border-color:#f8d486}to{border-color:#f8bb86}}.swal-icon--success{border-color:#a5dc86}.swal-icon--success:after,.swal-icon--success:before{content:"";border-radius:50%;position:absolute;width:60px;height:120px;background:#fff;-webkit-transform:rotate(45deg);transform:rotate(45deg)}.swal-icon--success:before{border-radius:120px 0 0 120px;top:-7px;left:-33px;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);-webkit-transform-origin:60px 60px;transform-origin:60px 60px}.swal-icon--success:after{border-radius:0 120px 120px 0;top:-11px;left:30px;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);-webkit-transform-origin:0 60px;transform-origin:0 60px;-webkit-animation:rotatePlaceholder 4.25s ease-in;animation:rotatePlaceholder 4.25s ease-in}.swal-icon--success__ring{width:80px;height:80px;border:4px solid hsla(98,55%,69%,.2);border-radius:50%;box-sizing:content-box;position:absolute;left:-4px;top:-4px;z-index:2}.swal-icon--success__hide-corners{width:5px;height:90px;background-color:#fff;padding:1px;position:absolute;left:28px;top:8px;z-index:1;-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}.swal-icon--success__line{height:5px;background-color:#a5dc86;display:block;border-radius:2px;position:absolute;z-index:2}.swal-icon--success__line--tip{width:25px;left:14px;top:46px;-webkit-transform:rotate(45deg);transform:rotate(45deg);-webkit-animation:animateSuccessTip .75s;animation:animateSuccessTip .75s}.swal-icon--success__line--long{width:47px;right:8px;top:38px;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);-webkit-animation:animateSuccessLong .75s;animation:animateSuccessLong .75s}@-webkit-keyframes rotatePlaceholder{0%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}5%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}12%{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}to{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}}@keyframes rotatePlaceholder{0%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}5%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}12%{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}to{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}}@-webkit-keyframes animateSuccessTip{0%{width:0;left:1px;top:19px}54%{width:0;left:1px;top:19px}70%{width:50px;left:-8px;top:37px}84%{width:17px;left:21px;top:48px}to{width:25px;left:14px;top:45px}}@keyframes animateSuccessTip{0%{width:0;left:1px;top:19px}54%{width:0;left:1px;top:19px}70%{width:50px;left:-8px;top:37px}84%{width:17px;left:21px;top:48px}to{width:25px;left:14px;top:45px}}@-webkit-keyframes animateSuccessLong{0%{width:0;right:46px;top:54px}65%{width:0;right:46px;top:54px}84%{width:55px;right:0;top:35px}to{width:47px;right:8px;top:38px}}@keyframes animateSuccessLong{0%{width:0;right:46px;top:54px}65%{width:0;right:46px;top:54px}84%{width:55px;right:0;top:35px}to{width:47px;right:8px;top:38px}}.swal-icon--info{border-color:#c9dae1}.swal-icon--info:before{width:5px;height:29px;bottom:17px;border-radius:2px;margin-left:-2px}.swal-icon--info:after,.swal-icon--info:before{content:"";position:absolute;left:50%;background-color:#c9dae1}.swal-icon--info:after{width:7px;height:7px;border-radius:50%;margin-left:-3px;top:19px}.swal-icon{width:80px;height:80px;border-width:4px;border-style:solid;border-radius:50%;padding:0;position:relative;box-sizing:content-box;margin:20px auto}.swal-icon:first-child{margin-top:32px}.swal-icon--custom{width:auto;height:auto;max-width:100%;border:none;border-radius:0}.swal-icon img{max-width:100%;max-height:100%}.swal-title{color:rgba(0,0,0,.65);font-weight:600;text-transform:none;position:relative;display:block;padding:13px 16px;font-size:27px;line-height:normal;text-align:center;margin-bottom:0}.swal-title:first-child{margin-top:26px}.swal-title:not(:first-child){padding-bottom:0}.swal-title:not(:last-child){margin-bottom:13px}.swal-text{font-size:16px;position:relative;float:none;line-height:normal;vertical-align:top;text-align:left;display:inline-block;margin:0;padding:0 10px;font-weight:400;color:rgba(0,0,0,.64);max-width:calc(100% - 20px);overflow-wrap:break-word;box-sizing:border-box}.swal-text:first-child{margin-top:45px}.swal-text:last-child{margin-bottom:45px}.swal-footer{text-align:right;padding-top:13px;margin-top:13px;padding:13px 16px;border-radius:inherit;border-top-left-radius:0;border-top-right-radius:0}.swal-button-container{margin:5px;display:inline-block;position:relative}.swal-button{background-color:#7cd1f9;color:#fff;border:none;box-shadow:none;border-radius:5px;font-weight:600;font-size:14px;padding:10px 24px;margin:0;cursor:pointer}.swal-button:not([disabled]):hover{background-color:#78cbf2}.swal-button:active{background-color:#70bce0}.swal-button:focus{outline:none;box-shadow:0 0 0 1px #fff,0 0 0 3px rgba(43,114,165,.29)}.swal-button[disabled]{opacity:.5;cursor:default}.swal-button::-moz-focus-inner{border:0}.swal-button--cancel{color:#555;background-color:#efefef}.swal-button--cancel:not([disabled]):hover{background-color:#e8e8e8}.swal-button--cancel:active{background-color:#d7d7d7}.swal-button--cancel:focus{box-shadow:0 0 0 1px #fff,0 0 0 3px rgba(116,136,150,.29)}.swal-button--danger{background-color:#e64942}.swal-button--danger:not([disabled]):hover{background-color:#df4740}.swal-button--danger:active{background-color:#cf423b}.swal-button--danger:focus{box-shadow:0 0 0 1px #fff,0 0 0 3px rgba(165,43,43,.29)}.swal-content{padding:0 20px;margin-top:20px;font-size:medium}.swal-content:last-child{margin-bottom:20px}.swal-content__input,.swal-content__textarea{-webkit-appearance:none;background-color:#fff;border:none;font-size:14px;display:block;box-sizing:border-box;width:100%;border:1px solid rgba(0,0,0,.14);padding:10px 13px;border-radius:2px;transition:border-color .2s}.swal-content__input:focus,.swal-content__textarea:focus{outline:none;border-color:#6db8ff}.swal-content__textarea{resize:vertical}.swal-button--loading{color:transparent}.swal-button--loading~.swal-button__loader{opacity:1}.swal-button__loader{position:absolute;height:auto;width:43px;z-index:2;left:50%;top:50%;-webkit-transform:translateX(-50%) translateY(-50%);transform:translateX(-50%) translateY(-50%);text-align:center;pointer-events:none;opacity:0}.swal-button__loader div{display:inline-block;float:none;vertical-align:baseline;width:9px;height:9px;padding:0;border:none;margin:2px;opacity:.4;border-radius:7px;background-color:hsla(0,0%,100%,.9);transition:background .2s;-webkit-animation:swal-loading-anim 1s infinite;animation:swal-loading-anim 1s infinite}.swal-button__loader div:nth-child(3n+2){-webkit-animation-delay:.15s;animation-delay:.15s}.swal-button__loader div:nth-child(3n+3){-webkit-animation-delay:.3s;animation-delay:.3s}@-webkit-keyframes swal-loading-anim{0%{opacity:.4}20%{opacity:.4}50%{opacity:1}to{opacity:.4}}@keyframes swal-loading-anim{0%{opacity:.4}20%{opacity:.4}50%{opacity:1}to{opacity:.4}}.swal-overlay{position:fixed;top:0;bottom:0;left:0;right:0;text-align:center;font-size:0;overflow-y:auto;background-color:rgba(0,0,0,.4);z-index:10000;pointer-events:none;opacity:0;transition:opacity .3s}.swal-overlay:before{content:" ";display:inline-block;vertical-align:middle;height:100%}.swal-overlay--show-modal{opacity:1;pointer-events:auto}.swal-overlay--show-modal .swal-modal{opacity:1;pointer-events:auto;box-sizing:border-box;-webkit-animation:showSweetAlert .3s;animation:showSweetAlert .3s;will-change:transform}.swal-modal{width:478px;opacity:0;pointer-events:none;background-color:#fff;text-align:center;border-radius:5px;position:static;margin:20px auto;display:inline-block;vertical-align:middle;-webkit-transform:scale(1);transform:scale(1);-webkit-transform-origin:50% 50%;transform-origin:50% 50%;z-index:10001;transition:opacity .2s,-webkit-transform .3s;transition:transform .3s,opacity .2s;transition:transform .3s,opacity .2s,-webkit-transform .3s}@media (max-width:500px){.swal-modal{width:calc(100% - 20px)}}@-webkit-keyframes showSweetAlert{0%{-webkit-transform:scale(1);transform:scale(1)}1%{-webkit-transform:scale(.5);transform:scale(.5)}45%{-webkit-transform:scale(1.05);transform:scale(1.05)}80%{-webkit-transform:scale(.95);transform:scale(.95)}to{-webkit-transform:scale(1);transform:scale(1)}}@keyframes showSweetAlert{0%{-webkit-transform:scale(1);transform:scale(1)}1%{-webkit-transform:scale(.5);transform:scale(.5)}45%{-webkit-transform:scale(1.05);transform:scale(1.05)}80%{-webkit-transform:scale(.95);transform:scale(.95)}to{-webkit-transform:scale(1);transform:scale(1)}}</style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-------------------- Font Awesome  -------------------->
+    <link rel="stylesheet" href="Delivery%20CRM%20Home%20Page_files/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <!-------------------- Favicon & Icon  -------------------->
+    <link rel="shortcut icon" href="http://127.0.0.1:8000/static/images/logo.png">
+    <!-------------------- Google Fonts  -------------------->
+    <link rel="preconnect" href="https://fonts.googleapis.com/"><link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link href="Delivery%20CRM%20Home%20Page_files/css2.css" rel="stylesheet">
+    
+    <!-------------------- Bootstrap CSS  -------------------->
+    <link href="Delivery%20CRM%20Home%20Page_files/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!-------------------- Animate.css  -------------------->
+    <link rel="stylesheet" href="Delivery%20CRM%20Home%20Page_files/animate.min.css">
+    <!-------------------- CSS  -------------------->
+    <link rel="stylesheet" href="Delivery%20CRM%20Home%20Page_files/style.css">
+    <link rel="stylesheet" href="Delivery%20CRM%20Home%20Page_files/normalize.css">    
+        <title>
+            Delivery CRM | Home Page 
+        </title>
+</head>
+    <body style="margin-bottom: 31px;" data-new-gr-c-s-check-loaded="8.904.0" data-gr-ext-installed="">
+        <div id="layout">
+            <div id="header">
+                
+<nav style="background-color: rgb(42, 124, 196);" class="navbar navbar-expand-sm fixed-top m-0 ">
+    <div class="container-fluid m-0">
+        <a href="http://127.0.0.1:8000/orders/" class="ms-lg-5">
+            <img style="width: 40px; height: auto;" src="Delivery%20CRM%20Home%20Page_files/_brand2.png" alt="Brand">
+        </a>
+        <a id="logo" class="navbar-brand" href="http://127.0.0.1:8000/orders/">
+            <p style="color: white;letter-spacing: 3px;" class="fs-5 fw-bold animate__animated animate__bounce animate__delay-.5s">Wassal</p>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span style="height: 20px; width: 20px;" class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mt-0 mb-0 ms-md-5 me-lg-auto gap-lg-5 gap-md-5 gap-2">
+                <li class="nav-item">
+                    <a class="btn text-light btn-sm p-1 fw-semibold" href="http://127.0.0.1:8000/customers/">Customers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn text-light btn-sm p-1 fw-semibold" href="http://127.0.0.1:8000/orders/">Orders</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn text-light btn-sm p-1 fw-semibold" href="http://127.0.0.1:8000/items/">Items</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn text-light btn-sm p-1 fw-semibold" href="#">Merchants</a>
+                </li>
+                <li>
+                    <a class="btn text-light btn-sm p-1 fw-semibold" href="#">Reports</a>
+                </li>  
+                <li class="nav-item">
+                    <a class="btn btn-outline-light btn-sm fw-semibold" href="#">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+            </div>      
+            <div class="">
+                <div class="landing animate__animated animate__slideInLeft animate__delay-0.5s">
+                    <div class="image mt-1 img-fluid"></div>
+                </div>
+                <div id="body" style="margin-top: 80px;" class="content">
+<div class="text-center">
+    <h1>CREATE ORDER</h1>
+    <form action="" method="post">
+        <input type="hidden" name="csrfmiddlewaretoken" value="yQ9kEdfcGHpqhC0yYpKWdBLExncyehpZ2rhndGuKORWGF14ExnNfcL4Ztfy2oqhZ">
+        
+        <input type="submit" value="Save">
+    </form>
+</div>
+
+</div>
+            </div>
+            <div id="footer"></div>
+        </div>
+    <!-------------------- Bootstrap JS  -------------------->
+    <script src="Delivery%20CRM%20Home%20Page_files/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
+    </script>
+    <!-------------------- JS  -------------------->
+    <!-------------------- Sweet Alert  -------------------->
+    <script src="Delivery%20CRM%20Home%20Page_files/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="Delivery%20CRM%20Home%20Page_files/scripts.js"></script>
+<script src="Delivery%20CRM%20Home%20Page_files/reload-listener.js" data-worker-script-path="/static/django-browser-reload/reload-worker.js" data-events-path="/__reload__/events/" defer="defer"></script>
+
+<link rel="stylesheet" href="Delivery%20CRM%20Home%20Page_files/print.css" media="print">
+<link rel="stylesheet" href="Delivery%20CRM%20Home%20Page_files/toolbar.css">
+
+
+<script type="module" src="Delivery%20CRM%20Home%20Page_files/toolbar.js" async=""></script>
+
+<div id="djDebug" class="" dir="ltr" data-store-id="3cfff11191bc4374933584b19ed7bd4e" data-render-panel-url="/__debug__/render_panel/" data-sidebar-url="/__debug__/history_sidebar/" data-default-show="true">
+  <div class="djdt-hidden" id="djDebugToolbar">
+    <ul id="djDebugPanelList">
+      <li><a id="djHideToolBarButton" href="#" title="Hide toolbar">Hide »</a></li>
+      
+        
+
+<li id="djdt-HistoryPanel" class="djDebugPanelButton">
+  <input type="checkbox" data-cookie="djdtHistoryPanel" checked="checked" title="Disable for next and successive requests">
+  
+    <a href="#" title="History" class="HistoryPanel">
+  
+  History
+  
+    
+      <br><small>/orders/order_create/</small>
+    
+  
+  
+    </a>
+  
+</li>
+
+      
+        
+
+<li id="djdt-VersionsPanel" class="djDebugPanelButton">
+  <input type="checkbox" data-cookie="djdtVersionsPanel" checked="checked" title="Disable for next and successive requests">
+  
+    <a href="#" title="Versions" class="VersionsPanel">
+  
+  Versions
+  
+    
+      <br><small>Django 4.1.4</small>
+    
+  
+  
+    </a>
+  
+</li>
+
+      
+        
+
+<li id="djdt-TimerPanel" class="djDebugPanelButton">
+  <input type="checkbox" data-cookie="djdtTimerPanel" checked="checked" title="Disable for next and successive requests">
+  
+    <a href="#" title="Time" class="TimerPanel">
+  
+  Time
+  
+    
+      <br><small>CPU: 33.89ms (34.59ms)</small>
+    
+  
+  
+    </a>
+  
+</li>
+
+      
+        
+
+<li id="djdt-SettingsPanel" class="djDebugPanelButton">
+  <input type="checkbox" data-cookie="djdtSettingsPanel" checked="checked" title="Disable for next and successive requests">
+  
+    <a href="#" title="Settings from crm.settings" class="SettingsPanel">
+  
+  Settings
+  
+    
+      
+    
+  
+  
+    </a>
+  
+</li>
+
+      
+        
+
+<li id="djdt-HeadersPanel" class="djDebugPanelButton">
+  <input type="checkbox" data-cookie="djdtHeadersPanel" checked="checked" title="Disable for next and successive requests">
+  
+    <a href="#" title="Headers" class="HeadersPanel">
+  
+  Headers
+  
+    
+      
+    
+  
+  
+    </a>
+  
+</li>
+
+      
+        
+
+<li id="djdt-RequestPanel" class="djDebugPanelButton">
+  <input type="checkbox" data-cookie="djdtRequestPanel" checked="checked" title="Disable for next and successive requests">
+  
+    <a href="#" title="Request" class="RequestPanel">
+  
+  Request
+  
+    
+      <br><small>order_create</small>
+    
+  
+  
+    </a>
+  
+</li>
+
+      
+        
+
+<li id="djdt-SQLPanel" class="djDebugPanelButton">
+  <input type="checkbox" data-cookie="djdtSQLPanel" checked="checked" title="Disable for next and successive requests">
+  
+    <a href="#" title="SQL queries from 1 connection" class="SQLPanel">
+  
+  SQL
+  
+    
+      <br><small>2 queries in 1.06ms</small>
+    
+  
+  
+    </a>
+  
+</li>
+
+      
+        
+
+<li id="djdt-StaticFilesPanel" class="djDebugPanelButton">
+  <input type="checkbox" data-cookie="djdtStaticFilesPanel" checked="checked" title="Disable for next and successive requests">
+  
+    <a href="#" title="Static files (157 found, 7 used)" class="StaticFilesPanel">
+  
+  Static files
+  
+    
+      <br><small>7 files used</small>
+    
+  
+  
+    </a>
+  
+</li>
+
+      
+        
+
+<li id="djdt-TemplatesPanel" class="djDebugPanelButton">
+  <input type="checkbox" data-cookie="djdtTemplatesPanel" checked="checked" title="Disable for next and successive requests">
+  
+    <a href="#" title="Templates (4 rendered)" class="TemplatesPanel">
+  
+  Templates
+  
+    
+      <br><small>orders/order_create.html</small>
+    
+  
+  
+    </a>
+  
+</li>
+
+      
+        
+
+<li id="djdt-CachePanel" class="djDebugPanelButton">
+  <input type="checkbox" data-cookie="djdtCachePanel" checked="checked" title="Disable for next and successive requests">
+  
+    <a href="#" title="Cache calls from 1 backend" class="CachePanel">
+  
+  Cache
+  
+    
+      <br><small>0 calls in 0.00ms</small>
+    
+  
+  
+    </a>
+  
+</li>
+
+      
+        
+
+<li id="djdt-SignalsPanel" class="djDebugPanelButton">
+  <input type="checkbox" data-cookie="djdtSignalsPanel" checked="checked" title="Disable for next and successive requests">
+  
+    <a href="#" title="Signals" class="SignalsPanel">
+  
+  Signals
+  
+    
+      <br><small>32 receivers of 15 signals</small>
+    
+  
+  
+    </a>
+  
+</li>
+
+      
+        
+
+<li id="djdt-LoggingPanel" class="djDebugPanelButton">
+  <input type="checkbox" data-cookie="djdtLoggingPanel" checked="checked" title="Disable for next and successive requests">
+  
+    <a href="#" title="Log messages" class="LoggingPanel">
+  
+  Logging
+  
+    
+      <br><small>0 messages</small>
+    
+  
+  
+    </a>
+  
+</li>
+
+      
+        
+
+<li id="djdt-RedirectsPanel" class="djDebugPanelButton">
+  <input type="checkbox" data-cookie="djdtRedirectsPanel" title="Enable for next and successive requests">
+  
+    <div class="djdt-contentless djdt-disabled">
+  
+  Intercept redirects
+  
+  
+    </div>
+  
+</li>
+
+      
+        
+
+<li id="djdt-ProfilingPanel" class="djDebugPanelButton">
+  <input type="checkbox" data-cookie="djdtProfilingPanel" title="Enable for next and successive requests">
+  
+    <div class="djdt-contentless djdt-disabled">
+  
+  Profiling
+  
+  
+    </div>
+  
+</li>
+
+      
+    </ul>
+  </div>
+  <div class="" id="djDebugToolbarHandle" style="top: 558px;">
+    <div title="Show toolbar" id="djShowToolBarButton">
+      <span id="djShowToolBarD">D</span><span id="djShowToolBarJ">J</span>DT
+    </div>
+  </div>
+
+  
+    
+
+
+  <div id="HistoryPanel" class="djdt-panelContent djdt-hidden">
+    <div class="djDebugPanelTitle">
+      <button type="button" class="djDebugClose">×</button>
+      <h3>History</h3>
+    </div>
+    <div class="djDebugPanelContent">
+      
+        <div class="djdt-loader"></div>
+        <div class="djdt-scroll"></div>
+      
+    </div>
+  </div>
+
+
+  
+    
+
+
+  <div id="VersionsPanel" class="djdt-panelContent djdt-hidden">
+    <div class="djDebugPanelTitle">
+      <button type="button" class="djDebugClose">×</button>
+      <h3>Versions</h3>
+    </div>
+    <div class="djDebugPanelContent">
+      
+        <div class="djdt-loader"></div>
+        <div class="djdt-scroll"></div>
+      
+    </div>
+  </div>
+
+
+  
+    
+
+
+  <div id="TimerPanel" class="djdt-panelContent djdt-hidden">
+    <div class="djDebugPanelTitle">
+      <button type="button" class="djDebugClose">×</button>
+      <h3>Time</h3>
+    </div>
+    <div class="djDebugPanelContent">
+      
+        <div class="djdt-loader"></div>
+        <div class="djdt-scroll"></div>
+      
+    </div>
+  </div>
+
+
+  
+    
+
+
+  <div id="SettingsPanel" class="djdt-panelContent djdt-hidden">
+    <div class="djDebugPanelTitle">
+      <button type="button" class="djDebugClose">×</button>
+      <h3>Settings from crm.settings</h3>
+    </div>
+    <div class="djDebugPanelContent">
+      
+        <div class="djdt-loader"></div>
+        <div class="djdt-scroll"></div>
+      
+    </div>
+  </div>
+
+
+  
+    
+
+
+  <div id="HeadersPanel" class="djdt-panelContent djdt-hidden">
+    <div class="djDebugPanelTitle">
+      <button type="button" class="djDebugClose">×</button>
+      <h3>Headers</h3>
+    </div>
+    <div class="djDebugPanelContent">
+      
+        <div class="djdt-loader"></div>
+        <div class="djdt-scroll"></div>
+      
+    </div>
+  </div>
+
+
+  
+    
+
+
+  <div id="RequestPanel" class="djdt-panelContent djdt-hidden">
+    <div class="djDebugPanelTitle">
+      <button type="button" class="djDebugClose">×</button>
+      <h3>Request</h3>
+    </div>
+    <div class="djDebugPanelContent">
+      
+        <div class="djdt-loader"></div>
+        <div class="djdt-scroll"></div>
+      
+    </div>
+  </div>
+
+
+  
+    
+
+
+  <div id="SQLPanel" class="djdt-panelContent djdt-hidden">
+    <div class="djDebugPanelTitle">
+      <button type="button" class="djDebugClose">×</button>
+      <h3>SQL queries from 1 connection</h3>
+    </div>
+    <div class="djDebugPanelContent">
+      
+        <div class="djdt-loader"></div>
+        <div class="djdt-scroll"></div>
+      
+    </div>
+  </div>
+
+
+  
+    
+
+
+  <div id="StaticFilesPanel" class="djdt-panelContent djdt-hidden">
+    <div class="djDebugPanelTitle">
+      <button type="button" class="djDebugClose">×</button>
+      <h3>Static files (157 found, 7 used)</h3>
+    </div>
+    <div class="djDebugPanelContent">
+      
+        <div class="djdt-loader"></div>
+        <div class="djdt-scroll"></div>
+      
+    </div>
+  </div>
+
+
+  
+    
+
+
+  <div id="TemplatesPanel" class="djdt-panelContent djdt-hidden">
+    <div class="djDebugPanelTitle">
+      <button type="button" class="djDebugClose">×</button>
+      <h3>Templates (4 rendered)</h3>
+    </div>
+    <div class="djDebugPanelContent">
+      
+        <div class="djdt-loader"></div>
+        <div class="djdt-scroll"></div>
+      
+    </div>
+  </div>
+
+
+  
+    
+
+
+  <div id="CachePanel" class="djdt-panelContent djdt-hidden">
+    <div class="djDebugPanelTitle">
+      <button type="button" class="djDebugClose">×</button>
+      <h3>Cache calls from 1 backend</h3>
+    </div>
+    <div class="djDebugPanelContent">
+      
+        <div class="djdt-loader"></div>
+        <div class="djdt-scroll"></div>
+      
+    </div>
+  </div>
+
+
+  
+    
+
+
+  <div id="SignalsPanel" class="djdt-panelContent djdt-hidden">
+    <div class="djDebugPanelTitle">
+      <button type="button" class="djDebugClose">×</button>
+      <h3>Signals</h3>
+    </div>
+    <div class="djDebugPanelContent">
+      
+        <div class="djdt-loader"></div>
+        <div class="djdt-scroll"></div>
+      
+    </div>
+  </div>
+
+
+  
+    
+
+
+  <div id="LoggingPanel" class="djdt-panelContent djdt-hidden">
+    <div class="djDebugPanelTitle">
+      <button type="button" class="djDebugClose">×</button>
+      <h3>Log messages</h3>
+    </div>
+    <div class="djDebugPanelContent">
+      
+        <div class="djdt-loader"></div>
+        <div class="djdt-scroll"></div>
+      
+    </div>
+  </div>
+
+
+  
+    
+
+
+
+  
+    
+
+
+
+  
+  <div id="djDebugWindow" class="djdt-panelContent djdt-hidden"></div>
+</div>
+<script src="Delivery%20CRM%20Home%20Page_files/reload-listener.js" data-worker-script-path="/static/django-browser-reload/reload-worker.js" data-events-path="/__reload__/events/" defer="defer"></script>
+<div id="DownloadStatusBarContainer" style="height: auto; width: auto; display: block; --background: #EFEFEF; --backgroundHover: #FFFFFF; --button: transparent; --buttonHover: #CCCCCC; --buttonBorder: #AAAAAA; --border: #888888; --download: #AAAAAA; --progress: #2A911F; --text: #111111; --error: #FF574F;"></div><script src="moz-extension://31b27b06-74f5-41fd-b665-26d89072e672/js/js.js"></script></body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>

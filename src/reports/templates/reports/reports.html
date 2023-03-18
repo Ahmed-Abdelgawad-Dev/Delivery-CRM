@@ -1,0 +1,12 @@
+{% extends 'core/_base.html' %}
+<h1>Reports page</h1>
+{% block content %}
+    <div >
+        <h1 style="text-align: center; color: cadetblue; font-weight: bold;">Reports</h1>
+        <ul>
+            <li class="text-red-500">
+                 <a href="{% url 'orders_made_today' %}">Orders made today</a>
+            </li>
+        </ul>
+    </div>
+{% endblock  %}
