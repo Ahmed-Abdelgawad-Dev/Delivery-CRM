@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     "debug_toolbar",
     "django_browser_reload",
     'import_export',
+    'rangefilter',
     # My Apps
     'core',
     'customers',

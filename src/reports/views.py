@@ -1,5 +1,5 @@
 from django.shortcuts import render
-import datetime
+from  datetime import date
 
 from orders.models import Order, OrderItem
 
@@ -9,7 +9,7 @@ def reports(request):
 
 
 def orders_made_today(request):
-    today = datetime.date.today()
+    today = date.today()
     year, month, day = today.year, today.month, today.day
     orders = OrderItem.objects.filter(created__year=year,
                                       created__month=month, created__day=day)
