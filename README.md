@@ -60,5 +60,4 @@ SECRET_KEY = django-insecure-_&i)q$(7i%n8pey!au00z(x-nl-to52=u42a#q!xocp)-xfj0s
 
 ###### Notes
 
-* Reports and Merchants are not ready yet and will be made ASAP.
-* There is still much to customize in the UI (styling).
+* There is still much to customize in the UI.
